@@ -45,6 +45,7 @@
                                 <div class="col">
                                     <button type="submit" id="calcular" name="calcular" class="btn btn-secondary mr-2">Calcular</button>
                                     <button type="button" id="apagarHistorico" name="apagarHistorico" class="btn btn-danger">Apagar Histórico</button>
+                                    
                                 </div>
                             </div>
                             <div class="form-row mt-3">
@@ -131,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var paragrafoResultado = document.getElementById("resultado");
         paragrafoResultado.innerText = resultado;
         cardResultado.style.display = "block";
+        return numero1 + opraçao + numero2 + "=" + reusltado;
     }
 
     document.getElementById("memoria").addEventListener("click", function() {
@@ -147,10 +149,15 @@ document.addEventListener("DOMContentLoaded", function() {
         alert(historicoMemoria);
     });
 
+    document.getElementById("PegarValores").addEventListener("click", function() {
+        alert(historicoMemoria);
+    });
+
     document.getElementById("apagarHistorico").addEventListener("click", function() {
         historicoMemoria = "";
         alert("Histórico apagado.");
     });
+   
 
     document.getElementById("limpar").addEventListener("click", function() {
         document.getElementById("numero1").value = "";
@@ -207,6 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $calc = new Calculadora();
         try {
             $resultado = $calc->calcular($numero1, $operacao, $numero2);
+             //echo "numero1 + opraçao + numero2 + "=" + reusultado;"
         } catch (Exception $e) {
             $erro = $e->getMessage();
         }
