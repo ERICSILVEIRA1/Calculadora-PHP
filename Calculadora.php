@@ -147,6 +147,11 @@ document.addEventListener("DOMContentLoaded", function() {
         alert(historicoMemoria);
     });
 
+    document.getElementById("pegarValores").addEventListener("click", function() {
+        historicoMemoria = "pegar valores";
+        alert(historicoMemoria);
+    });
+
     document.getElementById("apagarHistorico").addEventListener("click", function() {
         historicoMemoria = "";
         alert("Histórico apagado.");
@@ -219,6 +224,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 <p id='resultado'>$resultado</p>
               </div>";
     }
+
+    
 }
 
 ?>
