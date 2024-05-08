@@ -148,8 +148,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     document.getElementById("pegarValores").addEventListener("click", function() {
-        historicoMemoria = "pegar valores";
-        alert(historicoMemoria);
+      if (resultado !== null) {
+        document.getElementById("numero1").value = resultado;
+        document.getElementById("numero2").value = ""; 
+      } else {
+        alert("Não há resultado anterior para pegar.");
+      }
     });
 
     document.getElementById("apagarHistorico").addEventListener("click", function() {
